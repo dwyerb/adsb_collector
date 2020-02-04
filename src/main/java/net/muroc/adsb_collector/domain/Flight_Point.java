@@ -19,7 +19,7 @@ public class Flight_Point implements Serializable {
     private int flight_line_id;
     private String hex;
     private String squawk;
-    private String flight;
+    private String flight_number;
     private double lat;
     private double lon;
     private double nucp;
@@ -81,12 +81,12 @@ public class Flight_Point implements Serializable {
         this.squawk = squawk;
     }
 
-    public String getFlight() {
-        return flight;
+    public String getFlight_number() {
+        return flight_number;
     }
 
-    public void setFlight(String flight) {
-        this.flight = flight;
+    public void setFlight_number(String flight_number) {
+        this.flight_number = flight_number;
     }
 
     public double getLat() {

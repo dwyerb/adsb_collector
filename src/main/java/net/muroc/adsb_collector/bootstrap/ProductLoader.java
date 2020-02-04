@@ -64,30 +64,30 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
 
         //log.info("Saved Mug - id:" + mug.getId());
 
-        String fl1_flight = "AAY772";
+        String fl1_flightNumber = "AAY772";
         String fl1_Hex = "a35e5b";
         String fl1_Squawk = "abcd1234";
         double fl1_lat = 28.223225;
         double fl1_lon = -82.703032;
 
         //Flight_Point flight_point_1 = new Flight_Point();
-        //flight_point_1.setFlight(fl1_flight);
+        //flight_point_1.setFlight_number(fl1_flight);
         //flight_point_1.setHex(fl1_Hex);
         //flight_point_1.setSquawk(fl1_Squawk);
         //flight_point_1.setLat(fl1_lat);
         //flight_point_1.setLon(fl1_lon);
 
         Flight flight_line1 = new Flight();
-        flight_line1.setFlight(fl1_flight);
+        flight_line1.setFlightNumber(fl1_flightNumber);
         flight_line1.setHex(fl1_Hex);
         flight_line1.setSquawk(fl1_Squawk);
         flight_repository.save(flight_line1);
 
-        List<Flight> flights = flight_repository.findAllByFlightAndHexAndSquawk(fl1_flight,fl1_Hex,fl1_Squawk);
+        List<Flight> flights = flight_repository.findAllByHexAndSquawkAndFlightNumber(fl1_Hex,fl1_Squawk,fl1_flightNumber);
         if(flights.size()>0)
         {
             //Flight flight_line1 = new Flight();
-            //flight_line1.setFlight(fl1_flight);
+            //flight_line1.setFlight_number(fl1_flight);
             //flight_line1.setHex(fl1_Hex);
             //flight_line1.setSquawk(fl1_Squawk);
             //flight_line1.addPoint(flight_point_1);
@@ -96,8 +96,9 @@ public class ProductLoader implements ApplicationListener<ContextRefreshedEvent>
             //flight_point_repository.save(flight_point_1);
         }
 
+
         Flight_Point flight_point_1 = new Flight_Point();
-        flight_point_1.setFlight(fl1_flight);
+        flight_point_1.setFlight_number(fl1_flightNumber);
         flight_point_1.setHex(fl1_Hex);
         flight_point_1.setSquawk(fl1_Squawk);
         flight_point_1.setLat(fl1_lat);

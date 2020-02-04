@@ -33,7 +33,7 @@
             </tr>
             <tr th:each="flight : ${flights}">
                 <td th:text="${flight.flight_id}"><a href="/flight/${flight.flight_id}">Id</a></td>
-                <td th:text="${flight.flight}">Flight Number</td>
+                <td th:text="${flight.flightNumber}">Flight Number</td>
                 <td th:text="${flight.hex}">Hex</td>
                 <td th:text="${flight.squawk}">Squawk</td>
                 <td sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN')"><a th:href="${'/flight/show/' + flight.flight_id}">View</a></td>

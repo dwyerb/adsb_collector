@@ -14,7 +14,8 @@ public class Flight implements Serializable {
 
     private String hex;
     private String squawk;
-    private String flight;
+    private String flightNumber;
+
 
     @OneToMany(mappedBy = "flight_line_id", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Flight_Point> flight_pointList;
@@ -48,11 +49,11 @@ public class Flight implements Serializable {
         this.squawk = squawk;
     }
 
-    public String getFlight() {
-        return flight;
+    public String getFlightNumber() {
+        return flightNumber;
     }
 
-    public void setFlight(String flight) {
-        this.flight = flight;
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
     }
 }
